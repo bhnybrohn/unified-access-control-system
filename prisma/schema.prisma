@@ -1,0 +1,95 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Gender {
+  MALE
+  FEMALE
+  OTHERS
+}
+
+enum Request {
+  CREATE_SP
+  CONNECT_XPERT
+  EDIT_SP
+  MODIFY_SP
+  TOGGLE_SP
+  MODIFY_PERMISSION
+  REVOKE_ACCESS
+}
+
+model xpert {
+  id                 Int               @id @default(autoincrement())
+  first_name         String            @db.VarChar(150)
+  last_name          String            @db.VarChar(150)
+  middle_name        String?           @db.VarChar(150)
+  work_id            String?           @db.VarChar(150)
+  date_added         DateTime          @default(now())
+  email              String            @unique @db.VarChar(150)
+  photo              String?           @db.Text
+  is_active          Boolean           @default(true)
+  is_admin           Boolean           @default(false)
+  is_connected_app   Boolean           @default(false)
+  connect_token      String?           @db.Text
+  notification_token String?           @db.Text
+  gender             Gender?
+  squad              String?           @db.VarChar(150)
+  designation        String?           @db.VarChar(50)
+  is_deleted         Boolean           @default(false)
+  permission         permission[]
+  service_provider   service_provider? @relation(fields: [service_providerId], references: [id])
+  service_providerId Int?
+  request            request[]
+
+  @@index([email])
+}
+
+model service_provider {
+  id         Int          @id @default(autoincrement())
+  image_url  String?      @db.Text
+  name       String       @unique @db.VarChar(150)
+  url        String[]     @db.VarChar(150)
+  is_active  Boolean      @default(true)
+  identifier String       @unique
+  date_added DateTime     @default(now())
+  is_deleted         Boolean           @default(false)
+  from_sso   String?
+  permission permission[]
+  xpert      xpert[]
+  request    request[]
+}
+
+
+model permission {
+  id                  Int               @id @default(autoincrement())
+  xpert               xpert?            @relation(fields: [xpertEmail], references: [email])
+  xpertEmail          String?
+  is_active           Boolean           @default(true)
+  date_added          DateTime          @default(now())
+  service_provider    service_provider? @relation(fields: [service_provider_Id], references: [id])
+  service_provider_Id Int?
+
+  @@unique([xpertEmail, service_provider_Id], name: "permissionIdentifier")
+}
+
+model request {
+  id                 Int               @id @default(autoincrement())
+  request_type       Request
+  service_provider   service_provider? @relation(fields: [service_providerId], references: [id])
+  service_providerId Int?
+  request_identifier String?           @unique @db.VarChar(250)
+  xpert              xpert?            @relation(fields: [xpertId], references: [id])
+  xpertId            Int?
+  date_created       DateTime          @default(now())
+  expires_in         DateTime?
+  entities           String?
+  processed          Boolean           @default(false)
+}

@@ -1,0 +1,11 @@
+{"level":"info","message":"tolu smott Logged in on Sat May 06 2023 ","metadata":{"data":{},"type":"Auth"},"timestamp":"2023-05-06T01:23:24.182Z"}
+{"level":"info","message":"Created a service provider, cuddie","metadata":{"data":{"name":"cuddie","url":["https://cuddie.com","https://localhost:3001"]},"type":"Created"},"timestamp":"2023-05-06T01:44:28.600Z"}
+{"level":"info","message":"tolu smott Logged in on Sat May 06 2023 ","metadata":{"data":{},"type":"Auth"},"timestamp":"2023-05-06T12:09:14.951Z"}
+{"level":"info","message":"tolu smott Logged in on Sat May 06 2023 ","metadata":{"data":{},"type":"Auth"},"timestamp":"2023-05-06T16:30:11.552Z"}
+{"level":"info","message":"New Xperts Permissions Added","metadata":{"data":[{"date_added":"2023-05-06T16:40:27.317Z","id":1,"is_active":true,"service_provider_Id":1,"xpertEmail":"togunbiyi@africaexchange.com"}],"type":"Created"},"timestamp":"2023-05-06T16:40:27.334Z"}
+{"level":"info","message":"tolu smott Logged in on Sat May 06 2023 ","metadata":{"data":{},"type":"Auth"},"timestamp":"2023-05-06T19:14:47.822Z"}
+{"level":"info","message":"Set cuddie Status to false","metadata":{"data":{},"type":"Updated"},"timestamp":"2023-05-06T19:17:02.521Z"}
+{"level":"info","message":"tolu smott Logged in on Sat May 06 2023 ","metadata":{"data":{},"type":"Auth"},"timestamp":"2023-05-06T20:16:31.343Z"}
+{"level":"info","message":"Modified Service Provider, makanaki ","metadata":{"data":{"date_added":"2023-05-06T01:44:28.589Z","from_sso":"{\"pk\":\"cGtfRWIwOTQ0MTUxM2UwNGFmZTMyZTM5OWUxN2Q4NzI2NDY0YTI5OGY4ZmFjODQ2ZGRiYzYzODAyZDZhYTQxMjUzYWIwNmIwODE3MjBiMjI3ZThlN2I2ODBlNmU1ODc0ZGU5ODMyNg==\",\"sk\":\"c2tfNTA3NjExZjQ5YTRmMTA5NTJhOTY0NTRhNWEwYTQyZmYxNjI0NTVhNTM1ZjI4ZjZlZGRlYTJlMDM0N2YwNzlmZWU4YWI1MGM2ZWM4OWZhMmIyMzQyZDU0ZGY4ZTQzNTA0ZGVhYw==\"}","id":1,"identifier":"dc797cb75b","image_url":null,"is_active":false,"name":"makanaki","url":["https://cuddmakanaki.com"]},"type":"Updated"},"timestamp":"2023-05-06T20:19:05.758Z"}
+{"level":"info","message":"Lukman Abisoye Signed Out on Wed May 10 2023 ","metadata":{"data":{},"type":"Auth"},"timestamp":"2023-05-10T13:06:51.622Z"}
+{"level":"info","message":"Lukman Abisoye Signed Out on Wed May 10 2023 ","metadata":{"data":{},"type":"Auth"},"timestamp":"2023-05-10T13:07:26.042Z"}
